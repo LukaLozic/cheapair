@@ -1,5 +1,7 @@
 package com.cheapair.serviceclient;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -24,7 +26,7 @@ public class AmedeusClient {
 		
 	
 	public FlightOfferSearch[] getAmadeusFlights(String originLocationCode, String destinationLocationCode, 
-			String departureDate, String adultsNumber, String maxNumber) throws Exception {
+			Date departureDate, Integer passengerNumber, Integer max) throws Exception {
 		
 		Amadeus amadeus = null;
 		
@@ -43,12 +45,11 @@ public class AmedeusClient {
 		FlightOfferSearch[] amadeusFlights = null;
 		
 		try {
-			//TODO add checks for given criteria
 			   amadeusFlights = amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", originLocationCode)
 			    		.and("destinationLocationCode", destinationLocationCode)
 			    		.and("departureDate", departureDate)
-			    		.and("adults", adultsNumber)
-			    		.and("max",maxNumber));
+			    		.and("adults", passengerNumber)
+			    		.and("max", max));
 			   
 		} catch (Exception e) {
 			String errorMessage = "Error fetching flights from amadeus.";

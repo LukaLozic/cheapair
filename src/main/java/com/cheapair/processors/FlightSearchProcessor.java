@@ -7,11 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.amadeus.resources.FlightOfferSearch;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
+import com.cheapair.repositories.FlightRepository;
 import com.cheapair.serviceclient.AmedeusClient;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +25,14 @@ import lombok.extern.slf4j.Slf4j;
 public class FlightSearchProcessor {
 
 	@Autowired
-	AmedeusClient amadeusClient;
+	private AmedeusClient amadeusClient;
+	
+	private static FlightRepository flightRepository;
+	
+	@Autowired
+	public FlightSearchProcessor(FlightRepository flightRepository) {
+        this.flightRepository = flightRepository;
+    }
 	
 	/**
 	 * Retrieves amadeus flights
@@ -35,21 +44,27 @@ public class FlightSearchProcessor {
 	public FlightResponseBody retrieveAmadeusFlights(FlightSearchRequestBody requestBody) throws Exception {		
 
 		FlightResponseBody flightResponseBody = new FlightResponseBody();
+						
+		paramsCheck(requestBody);	
 		
-		//TODO param checks 		
-	
 		
-		FlightOfferSearch[] amadeusFlights = amadeusClient.getAmadeusFlights(null, null, null, null, null);
+		FlightOfferSearch[] amadeusFlights = amadeusClient.getAmadeusFlights(
+				requestBody.getDepartureAirport(), 
+				requestBody.getArrivalAirport(), 
+				requestBody.getDepartureDate(), 
+				requestBody.getPassengerNumber(), 
+				requestBody.getMaxNumber());
+		
 		
 		List<FlightOfferSearch> amadeusFlightsList = new ArrayList<>();	
 		Collections.addAll(amadeusFlightsList, amadeusFlights);
 		
 		
-		for(FlightOfferSearch flight : amadeusFlightsList) {
+		for(FlightOfferSearch flightAmadeus : amadeusFlightsList) {
 			
 			FlightAvailable responseFlight = new FlightAvailable();
 			
-
+			
 			
 			//map amadeus response to dtoFlightsResponse 
 
@@ -59,6 +74,31 @@ public class FlightSearchProcessor {
 		
 		return new FlightResponseBody();
 		
+	}
+
+	@SuppressWarnings("deprecation")
+	private void paramsCheck(FlightSearchRequestBody requestBody) throws Exception {
+
+
+		if(requestBody == null) {
+			throw new Exception("Request body is null.");
+		}
+		
+		if(StringUtils.isEmpty(requestBody.getDepartureAirport())) {
+			throw new Exception("Departure airport is null or empty.");
+		}
+		
+		if(StringUtils.isEmpty(requestBody.getArrivalAirport())) {
+			throw new Exception("Arrival airport is null or empty.");
+		}
+		
+		if(requestBody.getDepartureDate() == null) {
+			throw new Exception("Departure date is null or empty.");
+		}
+		
+		if(requestBody.getPassengerNumber() == null) {
+			throw new Exception("Passenger number is null or empty.");
+		}
 	}
 	
 	
