@@ -1,40 +1,29 @@
-package com.cheapair.dto;
+package com.cheapair.viewmodels;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NonNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-@Data
-public class FlightAvailable {
+import java.io.Serializable;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class FlightSearchModel implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-	private String idFlight;
 	private String originLocationCode;
 	private String destinationLocationCode;
 	private String departureDate;	
 	private String returnDate;	
 	private String currency;
-	private Integer numberOfStops;
-	private BigDecimal price;
-	public String getIdFlight() {
-		return idFlight;
-	}
-	public void setIdFlight(String idFlight) {
-		this.idFlight = idFlight;
-	}
+	private Integer numberOfPassengers;
+	private Integer max;
+	
 	public String getOriginLocationCode() {
 		return originLocationCode;
 	}
@@ -59,34 +48,24 @@ public class FlightAvailable {
 	public void setReturnDate(String returnDate) {
 		this.returnDate = returnDate;
 	}
+
 	public String getCurrency() {
 		return currency;
 	}
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
-
-	public Integer getNumberOfStops() {
-		return numberOfStops;
+	public Integer getNumberOfPassengers() {
+		return numberOfPassengers;
 	}
-	public void setNumberOfStops(Integer numberOfStops) {
-		this.numberOfStops = numberOfStops;
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
 	}
-	public BigDecimal getPrice() {
-		return price;
+	public Integer getMax() {
+		return max;
 	}
-	public void setPrice(BigDecimal price) {
-		this.price = price;
+	public void setMax(Integer max) {
+		this.max = max;
 	}
-	
-	
 
-
-
-
-
-
-	
-	
-	
 }

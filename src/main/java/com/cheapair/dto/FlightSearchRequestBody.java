@@ -2,71 +2,69 @@ package com.cheapair.dto;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class FlightSearchRequestBody {
 
 
 	private String originLocationCode;
 	private String destinationLocationCode;
-	private Date departureDate;	
-	private Date returnDate;	
-	private Integer passengerNumber;	
+	private String departureDate;	
+	private String returnDate;	
 	private String currency;
-	private String numberOfPassengers;
+	private Integer numberOfPassengers;
 	private Integer max;
 	
-	public String getNumberOfPassengers() {
-		return numberOfPassengers;
-	}
-	public void setNumberOfPassengers(String numberOfPassengers) {
-		this.numberOfPassengers = numberOfPassengers;
-	}
-	public Integer getMaxNumber() {
-		return max;
-	}
-	public void setMaxNumber(Integer maxNumber) {
-		this.max = maxNumber;
-	}
-	public String getDepartureAirport() {
+	public String getOriginLocationCode() {
 		return originLocationCode;
 	}
-	public void setDepartureAirport(String departureAirport) {
-		this.originLocationCode = departureAirport;
+	public void setOriginLocationCode(String originLocationCode) {
+		this.originLocationCode = originLocationCode;
 	}
-	public String getArrivalAirport() {
+	public String getDestinationLocationCode() {
 		return destinationLocationCode;
 	}
-	public void setArrivalAirport(String arrivalAirport) {
-		this.destinationLocationCode = arrivalAirport;
+	public void setDestinationLocationCode(String destinationLocationCode) {
+		this.destinationLocationCode = destinationLocationCode;
 	}
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
-	public Date getReturnDate() {
+	public String getReturnDate() {
 		return returnDate;
 	}
-	public void setReturnDate(Date returnDate) {
+	public void setReturnDate(String returnDate) {
 		this.returnDate = returnDate;
 	}
-	public Integer getPassengerNumber() {
-		return passengerNumber;
-	}
-	public void setPassengerNumber(Integer passengerNumber) {
-		this.passengerNumber = passengerNumber;
-	}
+
 	public String getCurrency() {
 		return currency;
 	}
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
+	public Integer getNumberOfPassengers() {
+		return numberOfPassengers;
+	}
+	public void setNumberOfPassengers(Integer numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
+	}
+	public Integer getMax() {
+		return max;
+	}
+	public void setMax(Integer max) {
+		this.max = max;
+	}
 
-	
-	
 	
 }

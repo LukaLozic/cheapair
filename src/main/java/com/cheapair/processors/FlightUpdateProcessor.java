@@ -29,7 +29,7 @@ public class FlightUpdateProcessor {
 		//param checks 
 		
 		
-		amadeusClient.getAmadeusFlights(null, null, null, null, null);
+//		amadeusClient.getAmadeusFlights(null, null, null, null, null);
 		
 		
 		//map amadeus response to dtoFlightsResponse 

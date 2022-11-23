@@ -2,6 +2,7 @@ package com.cheapair.processors;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.amadeus.resources.FlightOfferSearch;
+import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
+import com.cheapair.mappers.FlightAmadeusToFlightResponseMapper;
 import com.cheapair.repositories.FlightRepository;
 import com.cheapair.serviceclient.AmedeusClient;
 
@@ -23,11 +26,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class FlightSearchProcessor {
+	
+	public static final String OBJECT_DB = "object_db";
+	
+	public static final String OBJECT_RESPONSE = "object_response";
 
 	@Autowired
 	private AmedeusClient amadeusClient;
 	
-	private static FlightRepository flightRepository;
+	@Autowired
+	private FlightAmadeusToFlightResponseMapper flightAmadeusToFlightResponseMapper;
+	
+	private  FlightRepository flightRepository;
 	
 	@Autowired
 	public FlightSearchProcessor(FlightRepository flightRepository) {
@@ -47,32 +57,46 @@ public class FlightSearchProcessor {
 						
 		paramsCheck(requestBody);	
 		
+		boolean existsInDB = false;
 		
-		FlightOfferSearch[] amadeusFlights = amadeusClient.getAmadeusFlights(
-				requestBody.getDepartureAirport(), 
-				requestBody.getArrivalAirport(), 
-				requestBody.getDepartureDate(), 
-				requestBody.getPassengerNumber(), 
-				requestBody.getMaxNumber());
-		
-		
-		List<FlightOfferSearch> amadeusFlightsList = new ArrayList<>();	
-		Collections.addAll(amadeusFlightsList, amadeusFlights);
-		
-		
-		for(FlightOfferSearch flightAmadeus : amadeusFlightsList) {
+//TODO check in db if there are entities with corresponding criteria values		
+//	   if doesn't exist in db, than fill db object for persisting
+				
+		if(!existsInDB) {
+			FlightOfferSearch[] amadeusFlights = amadeusClient.getAmadeusFlights(
+					requestBody.getOriginLocationCode(),
+					requestBody.getDestinationLocationCode(), 
+					requestBody.getDepartureDate(), 
+					requestBody.getReturnDate(),
+					requestBody.getNumberOfPassengers(),
+					requestBody.getMax());
+				
+			List<FlightOfferSearch> amadeusFlightsList = new ArrayList<>();	
+			Collections.addAll(amadeusFlightsList, amadeusFlights);	
 			
-			FlightAvailable responseFlight = new FlightAvailable();
 			
-			
-			
-			//map amadeus response to dtoFlightsResponse 
-
+			List<FlightAvailable> flightsResponse = new ArrayList<>();
+			for(FlightOfferSearch flightAmadeus : amadeusFlightsList) {					
+				
+				
+				
+				HashMap<String, Object> objectMap = flightAmadeusToFlightResponseMapper.process(flightAmadeus, requestBody);		
+				
+				FlightAvailable flightAvailableResponse = (FlightAvailable) objectMap.get(OBJECT_RESPONSE);
+				if(flightAvailableResponse != null) {
+					flightsResponse.add(flightAvailableResponse);
+				}		
+				
+				Flight flightDb = (Flight) objectMap.get(OBJECT_DB);
+				if(flightDb != null) {
+					flightRepository.save(flightDb);
+				}				
+			}			
+			flightResponseBody.setFlightsAvailable(flightsResponse);
 		}
-		
 		 
 		
-		return new FlightResponseBody();
+		return flightResponseBody;
 		
 	}
 
@@ -84,20 +108,28 @@ public class FlightSearchProcessor {
 			throw new Exception("Request body is null.");
 		}
 		
-		if(StringUtils.isEmpty(requestBody.getDepartureAirport())) {
-			throw new Exception("Departure airport is null or empty.");
+		if(StringUtils.isEmpty(requestBody.getOriginLocationCode())) {
+			throw new Exception("Origin location code is null or empty.");
 		}
 		
-		if(StringUtils.isEmpty(requestBody.getArrivalAirport())) {
-			throw new Exception("Arrival airport is null or empty.");
+		if(StringUtils.isEmpty(requestBody.getDestinationLocationCode())) {
+			throw new Exception("Destination location code is null or empty.");
 		}
 		
-		if(requestBody.getDepartureDate() == null) {
+		if(StringUtils.isEmpty(requestBody.getDepartureDate())) {
 			throw new Exception("Departure date is null or empty.");
 		}
 		
-		if(requestBody.getPassengerNumber() == null) {
-			throw new Exception("Passenger number is null or empty.");
+		if(StringUtils.isEmpty(requestBody.getDepartureDate())) {
+			throw new Exception("Return date is null or empty.");
+		}
+		
+		if(requestBody.getNumberOfPassengers() == null) {
+			throw new Exception("Number of passenger is null or empty.");
+		}
+		
+		if(StringUtils.isEmpty(requestBody.getCurrency())) {
+			throw new Exception("Currency is null or empty.");
 		}
 	}
 	

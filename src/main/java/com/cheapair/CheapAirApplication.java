@@ -1,8 +1,10 @@
 package com.cheapair;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,46 +34,7 @@ public class CheapAirApplication {
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(CheapAirApplication.class, args);
-		
-		FlightOfferSearch[] amadeusFlights = null;
-		
-		try {
-			Amadeus amadeus = null;
-			
-			try {
-			     amadeus = Amadeus
-			            .builder("WjYR0UsA0A1AJzOxTCWN3dlnBG43rG9G", "qOHwk98y6GWZQvf5")
-			            .build();
 
-			} catch (Exception e) {
-				String errorMessage = "Error building amadeus object using clientId and clientSecret.";
-				throw new Exception(errorMessage, e);
-				//TODO add logger
-			}
-			
-			
-			try {
-				   amadeusFlights = amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", "SYD")
-				    		.and("destinationLocationCode", "BKK")
-				    		.and("departureDate", "2022-12-12")
-				    		.and("returnDate", "2022-12-14")
-				    		.and("adults", 1)
-				    		.and("max", 10));
-				   
-				   int i = 1 + 2;
-
-			} catch (Exception e) {
-				String errorMessage = "Error fetching flights from amadeus.";
-				throw new Exception(errorMessage, e);
-				//TODO add logger
-			}
-			   
-		} catch (Exception e) {
-			String errorMessage = "Error fetching flights from amadeus.";
-			throw new Exception(errorMessage, e);
-			//TODO add logger
-		}
-	
 	}
 	
 	

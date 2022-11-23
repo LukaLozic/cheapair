@@ -26,7 +26,7 @@ public class AmedeusClient {
 		
 	
 	public FlightOfferSearch[] getAmadeusFlights(String originLocationCode, String destinationLocationCode, 
-			Date departureDate, Integer passengerNumber, Integer max) throws Exception {
+			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception {
 		
 		Amadeus amadeus = null;
 		
@@ -48,7 +48,8 @@ public class AmedeusClient {
 			   amadeusFlights = amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", originLocationCode)
 			    		.and("destinationLocationCode", destinationLocationCode)
 			    		.and("departureDate", departureDate)
-			    		.and("adults", passengerNumber)
+			    		.and("returnDate", returnDate)
+			    		.and("adults", numberOfPassengers)
 			    		.and("max", max));
 			   
 		} catch (Exception e) {

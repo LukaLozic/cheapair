@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Cheap Air</title>
+</head>		  
+<body>
+	<form action="#" th:action="@{/searchFlights}" th:object="${flightSearchRequestBody}" method="post">
+	
+		<table>
+			<thead>
+				<tr>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 14%;"></th>
+					<th class="font8px" style="width: 16%;"></th>
+				</tr>				
+			</thead>
+			<tbody>
+				<tr>
+					<td><label for="originLocationCode">OriginLocationCode   // e.g. SYD</label></td>
+					<td><input type="text" th:field="*{originLocationCode}" id="originLocationCode" placeholder="OriginLocationCode"></td>
+					
+					<td><label for="destinationLocationCode">DestinationLocationCod   // e.g. BBK</label></td>
+					<td><input type="text" th:field="*{destinationLocationCode}" id="destinationLocationCode" placeholder="DestinationLocationCode"></td>					
+				</tr>
+				<tr>
+					<td><label for="departureDate">DepartureDate   // e.g. 2022-12-14</label></td>
+					<td><input type="text" th:field="*{departureDate}" id="departureDate" placeholder="DepartureDate"></td>
+					
+					<td><label for="returnDate">ReturnDate   // e.g. 2022-12-16</label></td>
+					<td><input type="text" th:field="*{returnDate}" id="returnDate" placeholder="ReturnDate"></td>					
+				</tr>		
+				<tr>
+					<td><label for="currency">Currency ISO 4217   // e.g. EUR</label></td>
+					<td><input type="text" th:field="*{currency}" id="currency" placeholder="Currency"></td>
+					
+					<td><label for="numberOfPassengers">NumberOfPassengers   //  e.g. 1</label></td>
+					<td><input type="text" th:field="*{numberOfPassengers}" id="numberOfPassengers" placeholder="NumberOfPassengers"></td>					
+				</tr>
+				<tr>
+					<td><label for="max">Max   // e.g. 10</label></td>
+					<td><input type="text" th:field="*{max}" id="max" placeholder="Max"></td>
+					
+					<td><input type="submit" value="Search flights">  </td>					
+				</tr>												
+												
+			</tbody>						
+		</table>
+      	    	       
+	</form>
+		
+</body>	  	  
+</html>	  

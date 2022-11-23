@@ -61,5 +61,87 @@ public class Flight {
 	@Column(name = "PRICE", columnDefinition = "decimal(15,2)")
 	private BigDecimal price;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getIdFlight() {
+		return idFlight;
+	}
+
+	public void setIdFlight(String idFlight) {
+		this.idFlight = idFlight;
+	}
+
+	public String getDepartureAirport() {
+		return departureAirport;
+	}
+
+	public void setDepartureAirport(String departureAirport) {
+		this.departureAirport = departureAirport;
+	}
+
+	public String getArrivalAirport() {
+		return arrivalAirport;
+	}
+
+	public void setArrivalAirport(String arrivalAirport) {
+		this.arrivalAirport = arrivalAirport;
+	}
+
+	public Date getDepartureDate() {
+		return departureDate;
+	}
+
+	public void setDepartureDate(Date departureDate) {
+		this.departureDate = departureDate;
+	}
+
+	public Date getReturnDate() {
+		return returnDate;
+	}
+
+	public void setReturnDate(Date returnDate) {
+		this.returnDate = returnDate;
+	}
+
+	public Integer getPassengerNumber() {
+		return passengerNumber;
+	}
+
+	public void setPassengerNumber(Integer passengerNumber) {
+		this.passengerNumber = passengerNumber;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public Integer getNumberOfStops() {
+		return numberOfStops;
+	}
+
+	public void setNumberOfStops(Integer numberOfStops) {
+		this.numberOfStops = numberOfStops;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+
+	
 
 }
