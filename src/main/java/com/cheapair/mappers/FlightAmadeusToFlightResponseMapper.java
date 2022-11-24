@@ -17,6 +17,7 @@ import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.FlightOfferSearch.Itinerary;
 import com.amadeus.resources.FlightOfferSearch.SearchPrice;
 import com.amadeus.resources.FlightOfferSearch.SearchSegment;
+import com.cheapair.dbmodels.Airport;
 import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
@@ -39,7 +40,7 @@ public class FlightAmadeusToFlightResponseMapper {
 	public static final String OBJECT_RESPONSE = "object_response";	
 
 		
-	public HashMap<String, Object> process(FlightOfferSearch flightAmadeus, FlightSearchRequestBody requestBody) throws Exception {		
+	public HashMap<String, Object> process(FlightOfferSearch flightAmadeus, FlightSearchRequestBody requestBody, Airport departureAirport, Airport arrivalAirport) throws Exception {		
 
 		HashMap<String, Object> objectMap = new HashMap<>();
 				
@@ -49,8 +50,8 @@ public class FlightAmadeusToFlightResponseMapper {
 		
 		if(requestBody.getDestinationLocationCode() != null) {
 			
-			flightResponse.setDestinationLocationCode(requestBody.getDestinationLocationCode());
-			flightDb.setArrivalAirport(requestBody.getDestinationLocationCode());
+			flightResponse.setDestinationLocationCode(arrivalAirport.getCode());
+			flightDb.setArrivalAirport(arrivalAirport);
 		}
 		
 		if(requestBody.getCurrency() != null) {
@@ -61,8 +62,8 @@ public class FlightAmadeusToFlightResponseMapper {
 		
 		if(requestBody.getOriginLocationCode() != null) {
 			
-			flightResponse.setOriginLocationCode(requestBody.getOriginLocationCode());
-			flightDb.setDepartureAirport(requestBody.getOriginLocationCode());
+			flightResponse.setOriginLocationCode(departureAirport.getCode());
+			flightDb.setDepartureAirport(departureAirport);
 		}
 		
 		if(requestBody.getDepartureDate() != null) {
@@ -126,11 +127,15 @@ public class FlightAmadeusToFlightResponseMapper {
 				flightDb.setPrice(grandTotal);
 			}
 		}
+		
+		flightDb.setPassengerNumber(requestBody.getNumberOfPassengers());
+			
+
 
 		if(flightAmadeus.getId() != null) {
 						
 			flightResponse.setIdFlight(flightAmadeus.getId());
-			flightDb.setIdFlight(flightAmadeus.getId());
+//			flightDb.setIdFlight(flightAmadeus.getId());
 		}
 		
 		if(flightResponse != null) {

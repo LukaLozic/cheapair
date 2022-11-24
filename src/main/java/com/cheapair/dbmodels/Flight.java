@@ -5,9 +5,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,29 +21,26 @@ import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
-@Table(name = "FLIGHT")
+@Table(name = "FLIGHTS")
 @Data
 @NoArgsConstructor
 public class Flight {
 
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false, columnDefinition = "integer")
+    @Column(name = "ID_FLIGHT", nullable = false, columnDefinition = "integer")
     @Setter(value = AccessLevel.PROTECTED)
-	private Integer id;
+	private Integer idFlight;
 	
-	@NonNull
-	@Column(name = "ID_FLIGHT", nullable = false, columnDefinition = "varchar(10)")
-	private String idFlight;
-	
-	@NonNull
-	@Column(name = "DEPARTURE_AIRPORT", nullable = false, columnDefinition = "varchar(100)")
-	private String departureAirport;
-	
-	@NonNull
-	@Column(name = "ARRIVAL_AIRPORT", nullable = false, columnDefinition = "varchar(100)")
-	private String arrivalAirport;
-	
+    @ManyToOne
+    @JoinColumn(name="departure_airport_id", nullable=false)
+	private Airport departureAirport;
+    
+    @ManyToOne
+    @JoinColumn(name="arrival_airport_id", nullable=false)
+	private Airport arrivalAirport;
+    
 	@Column(name = "DEPARTURE_DATE", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date departureDate;
@@ -50,8 +50,8 @@ public class Flight {
 	private Date returnDate;
 	
 	@Column(name = "PASSENGER_NUMBER", columnDefinition = "integer")
-	private Integer passengerNumber;
-	
+	private Integer passengerNumber;	
+
 	@Column(name = "CURRENCY", columnDefinition = "varchar(3)")
 	private String currency;
 	
@@ -60,36 +60,31 @@ public class Flight {
 	
 	@Column(name = "PRICE", columnDefinition = "decimal(15,2)")
 	private BigDecimal price;
+
+
+
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getIdFlight() {
+	public Integer getIdFlight() {
 		return idFlight;
 	}
 
-	public void setIdFlight(String idFlight) {
+	public void setIdFlight(Integer idFlight) {
 		this.idFlight = idFlight;
 	}
 
-	public String getDepartureAirport() {
+	public Airport getDepartureAirport() {
 		return departureAirport;
 	}
 
-	public void setDepartureAirport(String departureAirport) {
+	public void setDepartureAirport(Airport departureAirport) {
 		this.departureAirport = departureAirport;
 	}
 
-	public String getArrivalAirport() {
+	public Airport getArrivalAirport() {
 		return arrivalAirport;
 	}
 
-	public void setArrivalAirport(String arrivalAirport) {
+	public void setArrivalAirport(Airport arrivalAirport) {
 		this.arrivalAirport = arrivalAirport;
 	}
 
@@ -140,6 +135,9 @@ public class Flight {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
+
+	
 
 
 	
