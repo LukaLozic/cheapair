@@ -28,7 +28,9 @@ public class FlightAvailable {
 	private String returnDate;	
 	private String currency;
 	private Integer numberOfStops;
-	private BigDecimal price;
+	private String price;
+	
+	
 	public String getIdFlight() {
 		return idFlight;
 	}
@@ -65,19 +67,19 @@ public class FlightAvailable {
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
-
 	public Integer getNumberOfStops() {
 		return numberOfStops;
 	}
 	public void setNumberOfStops(Integer numberOfStops) {
 		this.numberOfStops = numberOfStops;
 	}
-	public BigDecimal getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(BigDecimal price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
+
 	
 	
 

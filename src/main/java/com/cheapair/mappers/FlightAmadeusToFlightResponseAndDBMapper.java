@@ -1,6 +1,8 @@
 package com.cheapair.mappers;
 
+import static com.cheapair.common.Helper.*;
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,22 +10,21 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.FlightOfferSearch.Itinerary;
 import com.amadeus.resources.FlightOfferSearch.SearchPrice;
 import com.amadeus.resources.FlightOfferSearch.SearchSegment;
+import com.cheapair.CheapAirApplication;
+import com.cheapair.common.Helper;
 import com.cheapair.dbmodels.Airport;
 import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
-import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
-import com.cheapair.repositories.FlightRepository;
-import com.cheapair.serviceclient.AmedeusClient;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,14 +32,18 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class FlightAmadeusToFlightResponseMapper {
-
-	public static final String DATE_FORMAT = "yyyy-MM-dd";
+public class FlightAmadeusToFlightResponseAndDBMapper {
 	
-	public static final String OBJECT_DB = "object_db";
-	
-	public static final String OBJECT_RESPONSE = "object_response";	
+	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
 
+	private static final String DATE_FORMAT = "yyyy-MM-dd";
+	
+	private static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
+	
+	private static final String OBJECT_DB = "object_db";
+	
+	private static final String OBJECT_RESPONSE = "object_response";	
+	
 		
 	public HashMap<String, Object> process(FlightOfferSearch flightAmadeus, FlightSearchRequestBody requestBody, Airport departureAirport, Airport arrivalAirport) throws Exception {		
 
@@ -68,17 +73,21 @@ public class FlightAmadeusToFlightResponseMapper {
 		
 		if(requestBody.getDepartureDate() != null) {
 			
-			flightResponse.setDepartureDate(requestBody.getDepartureDate());
+			Date date = new SimpleDateFormat(DATE_FORMAT).parse(requestBody.getDepartureDate());  		
+			DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_CRO);			    
+			String dateFormatedCro = dateFormat.format(date);			
 			
-		    Date date = new SimpleDateFormat(DATE_FORMAT).parse(requestBody.getDepartureDate());  
+			flightResponse.setDepartureDate(dateFormatedCro);					   
 			flightDb.setDepartureDate(date);
 		}
 		
 		if(requestBody.getReturnDate() != null) {
 			
-			flightResponse.setReturnDate(requestBody.getReturnDate());
+			Date date = new SimpleDateFormat(DATE_FORMAT).parse(requestBody.getReturnDate());  		
+			DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT_CRO);			    
+			String dateFormatedCro = dateFormat.format(date);
 			
-		    Date date = new SimpleDateFormat(DATE_FORMAT).parse(requestBody.getReturnDate());  
+			flightResponse.setReturnDate(dateFormatedCro);			
 			flightDb.setReturnDate(date);
 		}
 		
@@ -86,8 +95,9 @@ public class FlightAmadeusToFlightResponseMapper {
 		Itinerary[] itineraryArray = flightAmadeus.getItineraries(); 
 		
 		if(itineraryArray.length == 0) {
+			
 			String infoMessage = "There is no flights for given offer.";
-//TODO logg
+			log.info(infoMessage);
 			return null;
 		}
 		
@@ -100,48 +110,46 @@ public class FlightAmadeusToFlightResponseMapper {
 		SearchSegment[] segmentArray = itineraryDeparture.getSegments();
 		
 		int segments = segmentArray.length;
+		
 		if(segmentArray.length == 0) {
+			
 			String infoMessage = "There is no segments for given flight.";
-			//TODO logg
+			log.info(infoMessage);
 			return null;
 		}
 		
 		Integer numberOfStops = segments - 1;
 		flightResponse.setNumberOfStops(numberOfStops);
-		flightDb.setNumberOfStops(numberOfStops);
-		
-		
+		flightDb.setNumberOfStops(numberOfStops);	
 		
 		List<SearchSegment> segmentList = new ArrayList<>();	
 		Collections.addAll(segmentList, segmentArray);
 		
 						
 		SearchPrice amadeusPrice = flightAmadeus.getPrice();
+		
 		if(amadeusPrice != null) {
 			
 			if(amadeusPrice.getGrandTotal() != null) {
 				
 				BigDecimal grandTotal = new BigDecimal(amadeusPrice.getGrandTotal());
-				
-				flightResponse.setPrice(grandTotal);
+				String grandTotalCroFormat = formatCurrencyValueToCroatianStandard(grandTotal.toString());
+			
 				flightDb.setPrice(grandTotal);
+				flightResponse.setPrice(grandTotalCroFormat);
 			}
 		}
 		
-		flightDb.setPassengerNumber(requestBody.getNumberOfPassengers());
-			
+		flightDb.setPassengerNumber(requestBody.getNumberOfPassengers());			
 
-
-		if(flightAmadeus.getId() != null) {
-						
-			flightResponse.setIdFlight(flightAmadeus.getId());
-//			flightDb.setIdFlight(flightAmadeus.getId());
-		}
 		
 		if(flightResponse != null) {
+			
 			objectMap.put(OBJECT_RESPONSE, flightResponse);
 		}
+		
 		if(flightDb != null) {
+			
 			objectMap.put(OBJECT_DB, flightDb);
 		}
 		
@@ -149,10 +157,5 @@ public class FlightAmadeusToFlightResponseMapper {
 		
 	}
 
-
-	
-	
-	
-	
 	
 }

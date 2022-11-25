@@ -1,22 +1,31 @@
 package com.cheapair.processors;
 
+import static com.cheapair.common.Helper.*;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.amadeus.resources.FlightOfferSearch;
+import com.cheapair.CheapAirApplication;
 import com.cheapair.dbmodels.Airport;
 import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
-import com.cheapair.mappers.FlightAmadeusToFlightResponseMapper;
+import com.cheapair.mappers.FlightAmadeusToFlightResponseAndDBMapper;
+import com.cheapair.mappers.FlightDBToFlightResponse;
 import com.cheapair.repositories.AirportRepository;
 import com.cheapair.repositories.FlightRepository;
 import com.cheapair.serviceclient.AmedeusClient;
@@ -29,32 +38,34 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FlightSearchProcessor {
 	
+	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
+	
 	public static final String OBJECT_DB = "object_db";
 	
 	public static final String OBJECT_RESPONSE = "object_response";
+	
+	public static final String DATE_FORMAT = "yyyy-MM-dd";
+	
+	public static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
 
 	@Autowired
 	private AmedeusClient amadeusClient;
 	
 	@Autowired
-	private FlightAmadeusToFlightResponseMapper flightAmadeusToFlightResponseMapper;
-	
-	private  FlightRepository flightRepository;
-	
-	private  AirportRepository airportRepository;
-
+	private FlightAmadeusToFlightResponseAndDBMapper flightAmadeusToFlightResponseAndDBMapper;
 	
 	@Autowired
-	public FlightSearchProcessor(FlightRepository flightRepository, AirportRepository airportRepository) {
-        this.flightRepository = flightRepository;
-        this.airportRepository = airportRepository;
-
-    }
-
+	private FlightDBToFlightResponse flightDBToFlightResponse;
+	
+	@Autowired
+	private  FlightRepository flightRepository;
+	
+	@Autowired
+	private  AirportRepository airportRepository;
+	
 
 	/**
 	 * Retrieves amadeus flights
-	 * mapped to fronted DTO flights
 	 * @param requestBody 
 	 * @return 
 	 * @throws Exception 
@@ -67,14 +78,15 @@ public class FlightSearchProcessor {
 		
 		Airport departureAirport = airportIATAcheck(requestBody.getOriginLocationCode());
 		Airport arrivalAirport = airportIATAcheck(requestBody.getDestinationLocationCode());
-
 		
-		boolean existsInDB = false;
+		List<Flight> existingFlights = existingFlightsInDB(requestBody, departureAirport, arrivalAirport);
+				
 		
 //TODO check in db if there are entities with corresponding criteria values		
 //	   if doesn't exist in db, than fill db object for persisting
 				
-		if(!existsInDB) {
+		if(existingFlights == null) {
+			
 			FlightOfferSearch[] amadeusFlights = amadeusClient.getAmadeusFlights(
 					departureAirport.getCode(),
 					arrivalAirport.getCode(), 
@@ -85,45 +97,105 @@ public class FlightSearchProcessor {
 				
 			List<FlightOfferSearch> amadeusFlightsList = new ArrayList<>();	
 			Collections.addAll(amadeusFlightsList, amadeusFlights);	
-			
-			
+						
 			List<FlightAvailable> flightsResponse = new ArrayList<>();
+			
+			int idNum = 1;
+
 			for(FlightOfferSearch flightAmadeus : amadeusFlightsList) {					
+												
+				HashMap<String, Object> objectMap = flightAmadeusToFlightResponseAndDBMapper.process(flightAmadeus, requestBody, departureAirport, arrivalAirport);		
 				
-								
-				HashMap<String, Object> objectMap = flightAmadeusToFlightResponseMapper.process(flightAmadeus, requestBody, departureAirport, arrivalAirport);		
+				if(objectMap == null) {
+					continue;
+				}
 				
 				FlightAvailable flightAvailableResponse = (FlightAvailable) objectMap.get(OBJECT_RESPONSE);
+				flightAvailableResponse.setIdFlight(String.valueOf(idNum));
+				idNum++;
+				
 				if(flightAvailableResponse != null) {
+					
 					flightsResponse.add(flightAvailableResponse);
 				}		
 				
 				Flight flightDb = (Flight) objectMap.get(OBJECT_DB);
+				
 				if(flightDb != null) {
+					
 					flightRepository.save(flightDb);
 				}				
-			}			
+			}		
+			
 			flightResponseBody.setFlightsAvailable(flightsResponse);
 		}
-		 
+		else {
+			
+			List<FlightAvailable> flightsResponse = new ArrayList<>();
+			
+			int idNum = 1;
+			for(Flight flightDB : existingFlights) {
+				
+				FlightAvailable flightAvailableResponse = flightDBToFlightResponse.process(requestBody, flightDB);
+				flightAvailableResponse.setIdFlight(String.valueOf(idNum));
+				idNum++;
+				flightsResponse.add(flightAvailableResponse);
+			}
+			
+			flightResponseBody.setFlightsAvailable(flightsResponse);
+		}
+		 		
+		return flightResponseBody;		
+	}
+
+	private List<Flight> existingFlightsInDB(FlightSearchRequestBody requestBody, Airport departureAirport,
+			Airport arrivalAirport) throws Exception {
+
+		List<Flight> flightList = null;
 		
-		return flightResponseBody;
+		String currency = requestBody.getCurrency();
+		Integer nubmerOfPassengers = requestBody.getNumberOfPassengers();
+		Date departureDate = null;
+		Date returnDate = null;
 		
+		try {
+			
+			String departureDateStr = requestBody.getDepartureDate();	
+			 departureDate = new SimpleDateFormat(DATE_FORMAT).parse(departureDateStr);  		
+			
+			String returnDateStr = requestBody.getReturnDate();
+			 returnDate= new SimpleDateFormat(DATE_FORMAT).parse(returnDateStr);  
+		}
+		catch (Exception e) {
+			
+			String errorMessage = "Error checking for existing flights in DB: " + e.getMessage();
+			log.error(errorMessage);
+			throw new Exception(errorMessage);
+		}
+		
+		flightList = flightRepository.findAirports(departureAirport, arrivalAirport, departureDate, returnDate, nubmerOfPassengers, currency);
+	
+		if(flightList == null || flightList.size() == 0) {
+			
+			return null;
+		}
+		
+		return flightList;
 	}
 
 	private Airport airportIATAcheck(String airportLocation) throws Exception {
 		
 		Airport airportFound = null;
-		
-		
+				
 		if(airportLocation.length() > 3) {
 			
 			List<Airport> airports = airportRepository.findByCityNameContainingIgnoreCase(airportLocation);
 			
 			if(airports.size() == 0) {
-				String errorMessage = "There is no airports for given location: " + airportLocation;
-				throw new Exception(errorMessage);
-				//TODO log				
+				
+				String infoMessage = "There is no airports for given location: " + airportLocation;
+				log.info(infoMessage);
+				throw new Exception(infoMessage);
 			}
 			if(airports.size() == 1) {
 				
@@ -131,6 +203,7 @@ public class FlightSearchProcessor {
 				return airportFound;
 			}
 			else {
+				
 				StringBuilder sb = new StringBuilder();
 				String errorMessage = "For given location, " + airportLocation + " there is many airport IATA codes. "
 						+ "Please pick one from the following values: ";
@@ -139,9 +212,12 @@ public class FlightSearchProcessor {
 					String iataCode = airport.getCode();
 					sb.append(iataCode);
 					sb.append(" ");					
-				}								
-				throw new Exception(errorMessage.concat(sb.toString()));		
-				//TODO log								
+				}				
+				
+				errorMessage = errorMessage.concat(sb.toString());
+				
+				log.info(errorMessage);
+				throw new Exception(errorMessage);		
 			}
 		}
 		else {
@@ -151,9 +227,10 @@ public class FlightSearchProcessor {
 			List<Airport> airportsFoundByCode = airportRepository.findByCode(airportLocation);
 			
 			if(airportsFoundByCode == null || airportsFoundByCode.isEmpty()) {
-				String errorMessage = "There is no airports for given location: " + airportLocation;
-				throw new Exception(errorMessage);
-				//TODO log		
+				
+				String infoMessage = "There is no airports for given location: " + airportLocation;
+				log.info(infoMessage);
+				throw new Exception(infoMessage);			
 			}
 			
 			airportFound = airportsFoundByCode.get(0);
@@ -164,34 +241,49 @@ public class FlightSearchProcessor {
 	@SuppressWarnings("deprecation")
 	private void paramsCheck(FlightSearchRequestBody requestBody) throws Exception {
 
-
+		String infoMessage = null;
+		
 		if(requestBody == null) {
-			throw new Exception("Request body is null.");
+			
+			infoMessage = "Request body is null.";
+			throw new Exception(infoMessage);
 		}
 		
 		if(StringUtils.isEmpty(requestBody.getOriginLocationCode())) {
-			throw new Exception("Origin location code is null or empty.");
+			
+			infoMessage = "Origin location code is null or empty.";
+			throw new Exception(infoMessage);
 		}
 
 		
 		if(StringUtils.isEmpty(requestBody.getDestinationLocationCode())) {
-			throw new Exception("Destination location code is null or empty.");
+			
+			infoMessage = "Destination location code is null or empty.";
+			throw new Exception(infoMessage);
 		}
 		
 		if(StringUtils.isEmpty(requestBody.getDepartureDate())) {
-			throw new Exception("Departure date is null or empty.");
+			
+			infoMessage = "Departure date is null or empty.";
+			throw new Exception(infoMessage);
 		}
 		
 		if(StringUtils.isEmpty(requestBody.getDepartureDate())) {
-			throw new Exception("Return date is null or empty.");
+			
+			infoMessage = "Return date is null or empty.";
+			throw new Exception(infoMessage);
 		}
 		
 		if(requestBody.getNumberOfPassengers() == null) {
-			throw new Exception("Number of passenger is null or empty.");
+			
+			infoMessage = "Number of passenger is null or empty.";
+			throw new Exception(infoMessage);
 		}
 		
 		if(StringUtils.isEmpty(requestBody.getCurrency())) {
-			throw new Exception("Currency is null or empty.");
+			
+			infoMessage = "Currency is null or empty.";
+			throw new Exception(infoMessage);
 		}
 	}
 	

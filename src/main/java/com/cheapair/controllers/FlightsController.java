@@ -2,6 +2,8 @@ package com.cheapair.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cheapair.CheapAirApplication;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
@@ -29,6 +32,8 @@ public class FlightsController {
 	
 	@Autowired
 	FlightSearchProcessor processor;
+		
+	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
 	
 
     @GetMapping("/main")
@@ -38,22 +43,25 @@ public class FlightsController {
 	
 	
 	@PostMapping("/searchFlights")
-	public String /*ResponseEntity<FlightResponseBody>*/ getFlights(FlightSearchRequestBody flightSearchRequestBody, BindingResult result, Model model) {
+	public String getFlights(FlightSearchRequestBody flightSearchRequestBody, BindingResult result, Model model) {
 		
 		FlightResponseBody flightResponseBody = null;
 		
 		try {
+			
 			flightResponseBody = processor.retrieveAmadeusFlights(flightSearchRequestBody);
 			List<FlightAvailable> flights = flightResponseBody.getFlightsAvailable();
 			
 			model.addAttribute("flights", flights);
-		    return "index";
-			
-		} catch (Exception e) {
-		
-		    return "index";
-		}    
 
+		    return "searchFlights";			
+		} 
+		catch (Exception e) {
+		
+			log.error(e.getMessage());
+			model.addAttribute("exception", e);
+		    return "searchFlights";
+		}	
 	}
 	
 	
@@ -63,6 +71,7 @@ public class FlightsController {
 			model.addAttribute("users", processor.retrieveAmadeusFlights(null));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			log.error(e.getMessage());
 			e.printStackTrace();
 		}
 	    return "index";
