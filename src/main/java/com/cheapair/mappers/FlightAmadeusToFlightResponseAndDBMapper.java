@@ -12,15 +12,12 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.amadeus.resources.FlightOfferSearch;
 import com.amadeus.resources.FlightOfferSearch.Itinerary;
 import com.amadeus.resources.FlightOfferSearch.SearchPrice;
 import com.amadeus.resources.FlightOfferSearch.SearchSegment;
-import com.cheapair.CheapAirApplication;
-import com.cheapair.common.Helper;
 import com.cheapair.dbmodels.Airport;
 import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
@@ -34,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FlightAmadeusToFlightResponseAndDBMapper {
 	
-	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
+	private static Logger log = LoggerFactory.getLogger(FlightAmadeusToFlightResponseAndDBMapper.class);
 
 	private static final String DATE_FORMAT = "yyyy-MM-dd";
 	

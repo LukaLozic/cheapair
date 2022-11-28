@@ -1,0 +1,585 @@
+2022-11-28 13:52:58.633  INFO 12944 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 12944 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 13:52:58.634  INFO 12944 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 13:52:58.930  INFO 12944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 13:52:58.950  INFO 12944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2022-11-28 13:52:59.095  INFO 12944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 13:52:59.096  INFO 12944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 13:52:59.096  INFO 12944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 13:52:59.131  INFO 12944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 13:52:59.131  INFO 12944 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 489 ms
+2022-11-28 13:52:59.182  INFO 12944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 13:52:59.190  INFO 12944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 13:52:59.265  INFO 12944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 13:52:59.266  INFO 12944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 13:52:59.391  INFO 12944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 13:52:59.391  INFO 12944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:52:59.536  WARN 12944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 13:52:59.782  INFO 12944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 13:52:59.798  INFO 12944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 13:52:59.804  INFO 12944 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 1.226 seconds (JVM running for 77.942)
+2022-11-28 13:52:59.806  INFO 12944 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 13:52:59.806 ERROR 12944 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRRR
+2022-11-28 13:52:59.806  INFO 12944 --- [restartedMain] com.cheapair.CheapAirApplication         : baaaaaaaaaaaaaaaaaa
+2022-11-28 13:58:20.933  INFO 12944 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-28 13:58:20.955  INFO 12944 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 13:58:20.964  INFO 12944 --- [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 13:58:20.965  INFO 12944 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-11-28 13:58:20.969  INFO 12944 --- [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-11-28 15:08:20.080  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 13504 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:08:20.081  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:08:20.129  INFO 13504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:08:20.129  INFO 13504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:08:20.605  INFO 13504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:08:20.645  INFO 13504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:08:21.197  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:08:21.206  INFO 13504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:08:21.207  INFO 13504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:08:21.264  INFO 13504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:08:21.264  INFO 13504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1134 ms
+2022-11-28 15:08:21.495  INFO 13504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:08:21.538  INFO 13504 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:08:21.673  INFO 13504 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:08:21.760  INFO 13504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:08:21.896  INFO 13504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:08:21.912  INFO 13504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:08:22.466  INFO 13504 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:08:22.474  INFO 13504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:08:22.915  WARN 13504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:08:23.823  INFO 13504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:08:23.857  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:08:23.869  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 4.077 seconds (JVM running for 4.822)
+2022-11-28 15:08:40.568  INFO 13504 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:08:40.581  INFO 13504 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:08:40.589  INFO 13504 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:08:40.591  INFO 13504 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:08:40.594  INFO 13504 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:08:40.669  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 13504 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:08:40.669  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:08:40.817  INFO 13504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:08:40.827  INFO 13504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:08:40.904  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:08:40.905  INFO 13504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:08:40.905  INFO 13504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:08:40.920  INFO 13504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:08:40.920  INFO 13504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 247 ms
+2022-11-28 15:08:40.950  INFO 13504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:08:40.953  INFO 13504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 15:08:40.989  INFO 13504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 15:08:40.990  INFO 13504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:08:41.053  INFO 13504 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:08:41.054  INFO 13504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:08:41.180  WARN 13504 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:08:41.322  INFO 13504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:08:41.330  INFO 13504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:08:41.334  INFO 13504 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.689 seconds (JVM running for 22.286)
+2022-11-28 15:08:41.335  INFO 13504 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:09:10.464  INFO 9288 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 9288 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:09:10.465  INFO 9288 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:09:10.503  INFO 9288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:09:10.503  INFO 9288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:09:10.990  INFO 9288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:09:11.029  INFO 9288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:09:11.556  INFO 9288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:09:11.564  INFO 9288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:09:11.565  INFO 9288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:09:11.618  INFO 9288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:09:11.618  INFO 9288 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1114 ms
+2022-11-28 15:09:11.835  INFO 9288 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:09:11.876  INFO 9288 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:09:12.005  INFO 9288 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:09:12.090  INFO 9288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:09:12.217  INFO 9288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:09:12.232  INFO 9288 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:09:12.755  INFO 9288 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:09:12.762  INFO 9288 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:09:13.144  WARN 9288 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:09:13.984  INFO 9288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:09:14.019  INFO 9288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:09:14.030  INFO 9288 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 3.858 seconds (JVM running for 4.58)
+2022-11-28 15:10:15.075  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 15548 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:10:15.078  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:10:15.118  INFO 15548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:10:15.118  INFO 15548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:10:15.646  INFO 15548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:10:15.686  INFO 15548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:10:16.228  INFO 15548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:10:16.235  INFO 15548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:10:16.236  INFO 15548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:10:16.290  INFO 15548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:10:16.290  INFO 15548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1172 ms
+2022-11-28 15:10:16.517  INFO 15548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:10:16.558  INFO 15548 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:10:16.685  INFO 15548 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:10:16.766  INFO 15548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:10:16.891  INFO 15548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:10:16.906  INFO 15548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:10:17.443  INFO 15548 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:10:17.450  INFO 15548 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:10:17.860  WARN 15548 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:10:18.736  INFO 15548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:10:18.771  INFO 15548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:10:18.783  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 4.003 seconds (JVM running for 4.737)
+2022-11-28 15:10:35.499  INFO 15548 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:10:35.511  INFO 15548 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:10:35.520  INFO 15548 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:10:35.523  INFO 15548 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:10:35.527  INFO 15548 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:10:35.629  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 15548 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:10:35.629  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:10:35.780  INFO 15548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:10:35.790  INFO 15548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:10:35.875  INFO 15548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:10:35.875  INFO 15548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:10:35.876  INFO 15548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:10:35.892  INFO 15548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:10:35.892  INFO 15548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 258 ms
+2022-11-28 15:10:35.926  INFO 15548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:10:35.930  INFO 15548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 15:10:35.965  INFO 15548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 15:10:35.966  INFO 15548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:10:36.032  INFO 15548 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:10:36.032  INFO 15548 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:10:36.162  WARN 15548 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:10:36.303  INFO 15548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:10:36.314  INFO 15548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:10:36.318  INFO 15548 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.72 seconds (JVM running for 22.272)
+2022-11-28 15:10:36.320  INFO 15548 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:10:41.644  INFO 15792 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 15792 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:10:41.645  INFO 15792 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:10:41.677  INFO 15792 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:10:41.678  INFO 15792 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:10:42.079  INFO 15792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:10:42.113  INFO 15792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:10:42.566  INFO 15792 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:10:42.577  INFO 15792 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:10:42.577  INFO 15792 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:10:42.632  INFO 15792 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:10:42.632  INFO 15792 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 954 ms
+2022-11-28 15:10:42.812  INFO 15792 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:10:42.846  INFO 15792 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:10:42.952  INFO 15792 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:10:43.031  INFO 15792 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:10:43.150  INFO 15792 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:10:43.162  INFO 15792 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:10:43.621  INFO 15792 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:10:43.627  INFO 15792 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:10:43.924  WARN 15792 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:10:44.584  INFO 15792 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:10:44.616  INFO 15792 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:10:44.626  INFO 15792 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 3.23 seconds (JVM running for 3.743)
+2022-11-28 15:11:57.531  INFO 15792 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:11:57.543  INFO 15792 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:11:57.549  INFO 15792 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:11:57.551  INFO 15792 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:11:57.553  INFO 15792 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:11:57.627  INFO 15792 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 15792 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:11:57.627  INFO 15792 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:11:57.737  INFO 15792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:11:57.745  INFO 15792 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:11:57.807  INFO 15792 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:11:57.807  INFO 15792 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:11:57.807  INFO 15792 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:11:57.822  INFO 15792 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:11:57.822  INFO 15792 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 191 ms
+2022-11-28 15:11:57.849  INFO 15792 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:11:57.852  INFO 15792 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 15:11:57.889  INFO 15792 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 15:11:57.890  INFO 15792 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:11:57.951  INFO 15792 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:11:57.951  INFO 15792 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:12:14.120  INFO 12876 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 12876 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:12:14.121  INFO 12876 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:12:14.154  INFO 12876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:12:14.154  INFO 12876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:12:14.556  INFO 12876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:12:14.591  INFO 12876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:12:15.048  INFO 12876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:12:15.061  INFO 12876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:12:15.062  INFO 12876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:12:15.115  INFO 12876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:12:15.116  INFO 12876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 962 ms
+2022-11-28 15:12:15.291  INFO 12876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:12:15.326  INFO 12876 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:12:15.431  INFO 12876 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:12:15.509  INFO 12876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:12:15.736  INFO 12876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:12:15.748  INFO 12876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:12:16.217  INFO 12876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:12:16.224  INFO 12876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:12:16.518  WARN 12876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:12:17.154  INFO 12876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:12:17.182  INFO 12876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:12:17.192  INFO 12876 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 3.311 seconds (JVM running for 3.821)
+2022-11-28 15:12:17.194 ERROR 12876 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:13:10.025  INFO 12876 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-28 15:13:10.036  INFO 12876 --- [RMI TCP Connection(4)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:13:10.042  INFO 12876 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:13:10.044  INFO 12876 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:13:10.046  INFO 12876 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:13:17.130  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:13:17.131  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:13:17.173  INFO 25624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-28 15:13:17.173  INFO 25624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-28 15:13:17.602  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:13:17.636  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:13:18.114  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:13:18.124  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:13:18.125  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:13:18.186  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:13:18.186  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1013 ms
+2022-11-28 15:13:18.365  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:13:18.400  INFO 25624 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-28 15:13:18.510  INFO 25624 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-28 15:13:18.583  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-28 15:13:18.716  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-28 15:13:18.728  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:13:19.205  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:13:19.212  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:13:19.509  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:13:20.173  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:13:20.202  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:13:20.217  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 3.346 seconds (JVM running for 5.235)
+2022-11-28 15:13:20.219 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:13:40.972  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:13:40.982  INFO 25624 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:13:40.993  INFO 25624 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:13:40.995  INFO 25624 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-28 15:13:40.998  INFO 25624 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-28 15:13:41.063  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:13:41.063  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:13:41.194  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:13:41.209  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:13:41.305  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:13:41.306  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:13:41.306  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:13:41.326  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:13:41.326  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 259 ms
+2022-11-28 15:13:41.370  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:13:41.375  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-11-28 15:13:41.419  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-11-28 15:13:41.420  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:13:41.512  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:13:41.512  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:13:41.599  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:13:41.739  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:13:41.751  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:13:41.755  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.714 seconds (JVM running for 26.774)
+2022-11-28 15:13:41.757  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:13:41.757 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:15:49.839  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:15:49.849  INFO 25624 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:15:49.852  INFO 25624 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:15:49.853  INFO 25624 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-11-28 15:15:49.854  INFO 25624 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-11-28 15:15:49.906  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:15:49.907  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:15:50.017  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:15:50.025  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:15:50.080  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:15:50.081  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:15:50.081  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:15:50.094  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:15:50.095  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 185 ms
+2022-11-28 15:15:50.117  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:15:50.121  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-11-28 15:15:50.155  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-11-28 15:15:50.155  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:15:50.216  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:15:50.217  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:15:50.278  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:15:50.389  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:15:50.397  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:15:50.400  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.511 seconds (JVM running for 155.418)
+2022-11-28 15:15:50.401  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:15:50.401 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:16:11.251  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:16:11.261  INFO 25624 --- [Thread-11] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:16:11.264  INFO 25624 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:16:11.265  INFO 25624 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-11-28 15:16:11.266  INFO 25624 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-11-28 15:16:11.329  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:16:11.329  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:16:11.435  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:16:11.446  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:16:11.498  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:16:11.498  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:16:11.498  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:16:11.514  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:16:11.514  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 182 ms
+2022-11-28 15:16:11.536  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:16:11.540  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-11-28 15:16:11.574  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-11-28 15:16:11.574  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:16:11.628  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:16:11.628  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:16:11.686  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:16:11.800  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:16:11.808  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:16:11.811  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.5 seconds (JVM running for 176.83)
+2022-11-28 15:16:11.812  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:16:11.812 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:17:42.073  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:17:42.083  INFO 25624 --- [Thread-15] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:17:42.086  INFO 25624 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:42.087  INFO 25624 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-11-28 15:17:42.088  INFO 25624 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-11-28 15:17:42.141  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:17:42.141  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:17:42.242  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:17:42.250  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:17:42.302  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:17:42.302  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:17:42.302  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:17:42.320  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:17:42.321  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 177 ms
+2022-11-28 15:17:42.342  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:17:42.346  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-11-28 15:17:42.379  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-11-28 15:17:42.379  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:17:42.430  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:17:42.431  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:42.486  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:17:42.596  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:17:42.605  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:17:42.608  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.484 seconds (JVM running for 267.626)
+2022-11-28 15:17:42.609  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:17:42.609 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:17:51.179  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2022-11-28 15:17:51.189  INFO 25624 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:17:51.192  INFO 25624 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:51.192  INFO 25624 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2022-11-28 15:17:51.193  INFO 25624 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2022-11-28 15:17:51.246  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:17:51.246  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:17:51.351  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:17:51.359  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:17:51.414  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:17:51.414  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:17:51.414  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:17:51.431  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:17:51.431  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 182 ms
+2022-11-28 15:17:51.452  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:17:51.455  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2022-11-28 15:17:51.489  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2022-11-28 15:17:51.489  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:17:51.542  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:17:51.542  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:51.598  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:17:51.699  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:17:51.707  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:17:51.709  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.479 seconds (JVM running for 276.728)
+2022-11-28 15:17:51.710  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:17:51.710 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:17:57.225  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:17:57.234  INFO 25624 --- [Thread-23] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:17:57.237  INFO 25624 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:57.237  INFO 25624 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2022-11-28 15:17:57.238  INFO 25624 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2022-11-28 15:17:57.295  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:17:57.295  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:17:57.397  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:17:57.404  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:17:57.461  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:17:57.462  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:17:57.462  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:17:57.479  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:17:57.479  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 181 ms
+2022-11-28 15:17:57.501  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:17:57.504  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2022-11-28 15:17:57.538  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2022-11-28 15:17:57.539  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:17:57.590  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:17:57.590  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:17:57.649  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:17:57.750  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:17:57.760  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:17:57.763  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.485 seconds (JVM running for 282.782)
+2022-11-28 15:17:57.764  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:17:57.764 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:18:17.530  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2022-11-28 15:18:17.539  INFO 25624 --- [Thread-27] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:18:17.542  INFO 25624 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:17.543  INFO 25624 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2022-11-28 15:18:17.544  INFO 25624 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2022-11-28 15:18:17.601  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:18:17.601  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:18:17.706  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:18:17.714  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:18:17.770  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:18:17.771  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:18:17.771  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:18:17.784  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:18:17.784  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 180 ms
+2022-11-28 15:18:17.805  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:18:17.808  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2022-11-28 15:18:17.842  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2022-11-28 15:18:17.843  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:18:17.895  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:18:17.896  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:17.961  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:18:18.066  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:18:18.074  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:18:18.077  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.492 seconds (JVM running for 303.095)
+2022-11-28 15:18:18.078  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:18:18.078 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:18:27.660  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:18:27.670  INFO 25624 --- [Thread-31] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:18:27.673  INFO 25624 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:27.673  INFO 25624 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2022-11-28 15:18:27.675  INFO 25624 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2022-11-28 15:18:27.731  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:18:27.731  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:18:27.829  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:18:27.837  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:18:27.892  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:18:27.892  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:18:27.892  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:18:27.905  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:18:27.905  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 171 ms
+2022-11-28 15:18:27.927  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:18:27.930  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2022-11-28 15:18:27.967  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2022-11-28 15:18:27.967  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:18:28.014  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:18:28.014  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:28.069  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:18:28.182  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:18:28.191  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:18:28.194  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.479 seconds (JVM running for 313.212)
+2022-11-28 15:18:28.195  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:18:28.195 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:18:59.282  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:18:59.291  INFO 25624 --- [Thread-35] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:18:59.295  INFO 25624 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:59.295  INFO 25624 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2022-11-28 15:18:59.296  INFO 25624 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2022-11-28 15:18:59.355  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:18:59.355  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:18:59.458  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:18:59.466  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:18:59.516  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:18:59.517  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:18:59.517  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:18:59.530  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:18:59.530  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 172 ms
+2022-11-28 15:18:59.551  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:18:59.554  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2022-11-28 15:18:59.587  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2022-11-28 15:18:59.587  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:18:59.637  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:18:59.638  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:18:59.693  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:18:59.793  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:18:59.800  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:18:59.803  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.463 seconds (JVM running for 344.821)
+2022-11-28 15:18:59.804  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:18:59.805 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:19:10.436  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:19:10.445  INFO 25624 --- [Thread-39] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:19:10.448  INFO 25624 --- [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:10.449  INFO 25624 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2022-11-28 15:19:10.450  INFO 25624 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2022-11-28 15:19:10.515  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:19:10.515  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:19:10.613  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:19:10.620  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:19:10.677  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:19:10.677  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:19:10.677  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:19:10.691  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:19:10.691  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 173 ms
+2022-11-28 15:19:10.712  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:19:10.715  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2022-11-28 15:19:10.749  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2022-11-28 15:19:10.749  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:19:10.795  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:19:10.795  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:10.849  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:19:10.953  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:19:10.962  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:19:10.965  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.465 seconds (JVM running for 355.984)
+2022-11-28 15:19:10.966  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:19:10.966 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:19:27.730  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2022-11-28 15:19:27.739  INFO 25624 --- [Thread-43] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:19:27.742  INFO 25624 --- [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:27.743  INFO 25624 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2022-11-28 15:19:27.744  INFO 25624 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2022-11-28 15:19:27.811  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:19:27.811  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:19:27.924  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:19:27.931  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:19:27.983  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:19:27.984  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:19:27.984  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:19:27.997  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:19:27.997  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 183 ms
+2022-11-28 15:19:28.018  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:19:28.022  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2022-11-28 15:19:28.059  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2022-11-28 15:19:28.059  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:19:28.108  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:19:28.108  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:28.164  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:19:28.264  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:19:28.272  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:19:28.274  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.479 seconds (JVM running for 373.292)
+2022-11-28 15:19:28.275  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:19:28.275 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:19:38.879  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:19:38.888  INFO 25624 --- [Thread-47] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:19:38.892  INFO 25624 --- [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:38.892  INFO 25624 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2022-11-28 15:19:38.893  INFO 25624 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2022-11-28 15:19:38.958  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:19:38.958  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:19:39.061  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:19:39.069  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:19:39.120  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:19:39.121  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:19:39.121  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:19:39.134  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:19:39.135  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2022-11-28 15:19:39.156  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:19:39.159  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2022-11-28 15:19:39.302  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2022-11-28 15:19:39.302  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:19:39.354  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:19:39.355  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:39.408  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:19:39.508  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:19:39.516  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:19:39.519  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.578 seconds (JVM running for 384.537)
+2022-11-28 15:19:39.519  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:19:39.519 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:19:44.013  INFO 25624 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-28 15:19:44.022  INFO 25624 --- [Thread-51] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:19:44.025  INFO 25624 --- [Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:44.026  INFO 25624 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2022-11-28 15:19:44.027  INFO 25624 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2022-11-28 15:19:44.089  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Starting CheapAirApplication using Java 17.0.4.1 on DESKTOP-861V5V2 with PID 25624 (C:\dev\workspaces\workspaceLocal\CheapAir\target\classes started by Korisnik in C:\dev\workspaces\workspaceLocal\CheapAir)
+2022-11-28 15:19:44.089  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-11-28 15:19:44.193  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-28 15:19:44.201  INFO 25624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2022-11-28 15:19:44.252  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-28 15:19:44.253  INFO 25624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-28 15:19:44.253  INFO 25624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-28 15:19:44.266  INFO 25624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-28 15:19:44.266  INFO 25624 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2022-11-28 15:19:44.287  INFO 25624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-28 15:19:44.290  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2022-11-28 15:19:44.324  INFO 25624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2022-11-28 15:19:44.324  INFO 25624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL81Dialect
+2022-11-28 15:19:44.370  INFO 25624 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-28 15:19:44.370  INFO 25624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:19:44.424  WARN 25624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-28 15:19:44.531  INFO 25624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-28 15:19:44.539  INFO 25624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-28 15:19:44.542  INFO 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : Started CheapAirApplication in 0.468 seconds (JVM running for 389.56)
+2022-11-28 15:19:44.543  INFO 25624 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-28 15:19:44.543 ERROR 25624 --- [restartedMain] com.cheapair.CheapAirApplication         : ERRRORRRR
+2022-11-28 15:20:02.071  INFO 25624 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-28 15:20:02.080  INFO 25624 --- [RMI TCP Connection(10)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-28 15:20:02.083  INFO 25624 --- [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-28 15:20:02.084  INFO 25624 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2022-11-28 15:20:02.085  INFO 25624 --- [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.

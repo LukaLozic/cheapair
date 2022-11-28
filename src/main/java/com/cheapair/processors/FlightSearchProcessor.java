@@ -1,8 +1,6 @@
 package com.cheapair.processors;
 
-import static com.cheapair.common.Helper.*;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,16 +12,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.amadeus.resources.FlightOfferSearch;
-import com.cheapair.CheapAirApplication;
 import com.cheapair.dbmodels.Airport;
 import com.cheapair.dbmodels.Flight;
 import com.cheapair.dto.FlightAvailable;
 import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
+import com.cheapair.exceptions.FlightsServiceException;
 import com.cheapair.mappers.FlightAmadeusToFlightResponseAndDBMapper;
 import com.cheapair.mappers.FlightDBToFlightResponse;
 import com.cheapair.repositories.AirportRepository;
@@ -38,13 +35,13 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FlightSearchProcessor {
 	
-	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
+	private static Logger log = LoggerFactory.getLogger(FlightSearchProcessor.class);
 	
 	public static final String OBJECT_DB = "object_db";
 	
 	public static final String OBJECT_RESPONSE = "object_response";
 	
-	public static final String DATE_FORMAT = "yyyy-MM-dd";
+	public static final String DATE_FORMAT = "yyyy-MMd";
 	
 	public static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
 
@@ -63,7 +60,6 @@ public class FlightSearchProcessor {
 	@Autowired
 	private  AirportRepository airportRepository;
 	
-
 	/**
 	 * Retrieves amadeus flights
 	 * @param requestBody 
@@ -81,9 +77,6 @@ public class FlightSearchProcessor {
 		
 		List<Flight> existingFlights = existingFlightsInDB(requestBody, departureAirport, arrivalAirport);
 				
-		
-//TODO check in db if there are entities with corresponding criteria values		
-//	   if doesn't exist in db, than fill db object for persisting
 				
 		if(existingFlights == null) {
 			
@@ -170,7 +163,7 @@ public class FlightSearchProcessor {
 			
 			String errorMessage = "Error checking for existing flights in DB: " + e.getMessage();
 			log.error(errorMessage);
-			throw new Exception(errorMessage);
+			throw new FlightsServiceException(errorMessage, e);
 		}
 		
 		flightList = flightRepository.findAirports(departureAirport, arrivalAirport, departureDate, returnDate, nubmerOfPassengers, currency);
@@ -205,7 +198,7 @@ public class FlightSearchProcessor {
 			else {
 				
 				StringBuilder sb = new StringBuilder();
-				String errorMessage = "For given location, " + airportLocation + " there is many airport IATA codes. "
+				String infoMessage = "For given location, " + airportLocation + " there is many airport IATA codes. "
 						+ "Please pick one from the following values: ";
 				
 				for(Airport airport : airports) {
@@ -214,10 +207,10 @@ public class FlightSearchProcessor {
 					sb.append(" ");					
 				}				
 				
-				errorMessage = errorMessage.concat(sb.toString());
+				infoMessage = infoMessage.concat(sb.toString());
 				
-				log.info(errorMessage);
-				throw new Exception(errorMessage);		
+				log.info(infoMessage);
+				throw new Exception(infoMessage);		
 			}
 		}
 		else {

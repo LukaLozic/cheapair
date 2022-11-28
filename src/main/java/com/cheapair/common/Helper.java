@@ -1,7 +1,6 @@
 package com.cheapair.common;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,10 +9,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.cheapair.dto.FlightSearchRequestBody;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
@@ -149,6 +146,14 @@ public class Helper {
                 Arrays.asList(strSplit));
 
         return strList;
+    }
+    
+    public static String convertDateToString(Date date, String format) {
+    	
+    	DateFormat dateFormat = new SimpleDateFormat(format);  
+    	String strDate = dateFormat.format(date);  
+    	
+    	return strDate;	
     }
 
 	

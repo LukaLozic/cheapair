@@ -1,21 +1,8 @@
 package com.cheapair.dto;
 
-import java.math.BigDecimal;
-import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NonNull;
-import lombok.Setter;
 
 @Data
 public class FlightAvailable {

@@ -1,6 +1,5 @@
 package com.cheapair.repositories;
 import com.cheapair.dbmodels.Airport;
-import com.cheapair.dbmodels.Flight;
 
 import java.util.List;
 

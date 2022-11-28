@@ -1,6 +1,5 @@
 package com.cheapair.dto;
 
-import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

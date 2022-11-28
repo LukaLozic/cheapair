@@ -1,19 +1,15 @@
 package com.cheapair.serviceclient;
 
-import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import com.amadeus.Amadeus;
 import com.amadeus.Params;
-import com.amadeus.exceptions.ResponseException;
-import com.amadeus.referenceData.Locations;
 import com.amadeus.resources.FlightOfferSearch;
-import com.amadeus.resources.Location;
-import com.cheapair.CheapAirApplication;
+import com.cheapair.exceptions.FlightsServiceException;
+import com.cheapair.exceptions.NoFlightsException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,14 +20,14 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AmedeusClient {
 	
-	private static Logger log = LoggerFactory.getLogger(CheapAirApplication.class);
+	private static Logger log = LoggerFactory.getLogger(AmedeusClient.class);
 
 	public static final String AMADEUS_CLIENT_ID = System.getenv("AMADEUS_CLIENT_ID");
 	public static final String AMADEUS_CLIENT_SECRET = System.getenv("AMADEUS_CLIENT_SECRET");
 		
 	
 	public FlightOfferSearch[] getAmadeusFlights(String originLocationCode, String destinationLocationCode, 
-			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception {
+			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception, NoFlightsException {
 		
 		Amadeus amadeus = null;
 		
@@ -62,22 +58,24 @@ public class AmedeusClient {
 		} catch (Exception e) {
 			
 			String errorMessage = "Error fetching flights from amadeus.";
-			throw new Exception(errorMessage, e);			
+			throw new FlightsServiceException(errorMessage, e);			
 		}
 	
 		if(amadeusFlights.length == 0) {
 			
 			String infoMessage = "There is no flights for given criteria.";
-			throw new Exception(infoMessage);
+			throw new NoFlightsException(infoMessage);
 		}
 		
 		if(amadeusFlights[0].getResponse() != null && amadeusFlights[0].getResponse().getStatusCode() != 200) {
 			
 			String errorMessage = "Response status code from Amadeus is " + amadeusFlights[0].getResponse().getStatusCode();
-			throw new Exception(errorMessage);
+			throw new FlightsServiceException(errorMessage, null);
 		}
 
 	   return amadeusFlights;		
 	}
+
+	
 
 }
