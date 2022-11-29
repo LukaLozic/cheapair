@@ -88,6 +88,11 @@ public class FlightAmadeusToFlightResponseAndDBMapper {
 			flightDb.setReturnDate(date);
 		}
 		
+		if(requestBody.getMax() != null) {
+						
+			flightDb.setFlightsFetched(requestBody.getMax());
+		}
+		
 		
 		Itinerary[] itineraryArray = flightAmadeus.getItineraries(); 
 		

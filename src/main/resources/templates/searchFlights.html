@@ -2,38 +2,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
 <head>
+	<meta charset="utf-8">
 	<title>Cheap Air</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	 
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+		
 </head>		  
 <body>
+
 	<form action="#" th:action="@{/searchFlights}" th:object="${flightSearchRequestBody}" method="post">
 	
-		<table>
-			<thead>
-				<tr>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 14%;"></th>
-					<th class="font8px" style="width: 16%;"></th>
-				</tr>				
-			</thead>
+		<table class="table table-striped">
 			<tbody>
 				<tr>
-					<td><label for="originLocationCode">OriginLocationCode   // e.g. SYD</label></td>
-					<td><input type="text" th:field="*{originLocationCode}" id="originLocationCode" placeholder="OriginLocationCode"></td>
+					<td><label for="departureDate">DepartureDate   // e.g. 11/30/2022</label></td>
+					<td><input type="date" size="30" th:field="*{departureDate}" id="departureDate" placeholder="DepartureDate"></td>
 					
-					<td><label for="destinationLocationCode">DestinationLocationCod   // e.g. BBK</label></td>
-					<td><input type="text" th:field="*{destinationLocationCode}" id="destinationLocationCode" placeholder="DestinationLocationCode"></td>					
-				</tr>
+					<td><label for="returnDate">ReturnDate   // e.g. 11/30/2022</label></td>
+					<td><input type="date" size="30" th:field="*{returnDate}" id="returnDate" placeholder="ReturnDate"></td>					
+				</tr>				
 				<tr>
-					<td><label for="departureDate">DepartureDate   // e.g. 2022-12-14</label></td>
-					<td><input type="text" th:field="*{departureDate}" id="departureDate" placeholder="DepartureDate"></td>
+					<td><label for="originLocationCode">OriginCode   // e.g. SYD, Zagreb</label></td>
+					<td><input type="text" th:field="*{originLocationCode}" id="originLocationCode" placeholder="OriginCode"></td>
 					
-					<td><label for="returnDate">ReturnDate   // e.g. 2022-12-16</label></td>
-					<td><input type="text" th:field="*{returnDate}" id="returnDate" placeholder="ReturnDate"></td>					
-				</tr>		
+					<td><label for="destinationLocationCode">DestinationCode   // e.g. BBK, Berlin</label></td>
+					<td><input type="text" th:field="*{destinationLocationCode}" id="destinationLocationCode" placeholder="DestinationCode"></td>					
+				</tr>	
 				<tr>
 					<td><label for="currency">Currency ISO 4217   // e.g. EUR</label></td>
 					<td><input type="text" th:field="*{currency}" id="currency" placeholder="Currency"></td>
@@ -42,7 +40,7 @@
 					<td><input type="text" th:field="*{numberOfPassengers}" id="numberOfPassengers" placeholder="NumberOfPassengers"></td>					
 				</tr>
 				<tr>
-					<td><label for="max">Max   // e.g. 10</label></td>
+					<td><label for="max">FetchMaxFlights   // e.g. 10</label></td>
 					<td><input type="text" th:field="*{max}" id="max" placeholder="Max"></td>
 					
 					<td><input type="submit" value="Search flights">  </td>					
@@ -54,21 +52,21 @@
 	</form>
 	<div th:switch="${flights}">
 	    <div>
-	    	<span th:if="${exception != null}" th:text="${exception.message}">Static summary</span>
+	    	<span class="exception-message" th:if="${exception != null}" th:text="${exception.message}">Static summary</span>
 	    </div>
 	        <div th:case="*">
 	            <h2>Flights available</h2>        
-	            <table>
+	            <table  id="myTable" class="table table-striped">
 	                <thead>
-						<tr>
-							<th class="font8px" style="width: 10%;">IdFlight</th>
-							<th class="font8px" style="width: 14%;">OriginLocationCode</th>
-							<th class="font8px" style="width: 14%;">DestinationLocationCode</th>
-							<th class="font8px" style="width: 14%;">DepartureDate</th>
-							<th class="font8px" style="width: 14%;">ReturnDate</th>
-							<th class="font8px" style="width: 10%;">NumberOfStops</th>
-							<th class="font8px" style="width: 14%;">Price</th>
-							<th class="font8px" style="width: 10%;">Currency</th>
+						<tr class="bg-info">
+							<th>IdFlight</th>
+							<th>OriginLocationCode</th>
+							<th>DestinationLocationCode</th>
+							<th>DepartureDate</th>
+							<th>ReturnDate</th>
+							<th>NumberOfStops</th>
+							<th>Price</th>
+							<th>Currency</th>
 						</tr>	                
 	                </thead>
 	                <tbody>
@@ -87,5 +85,26 @@
 	    </div>      
 	</div>	
 		
-</body>	  	  
+	<script>
+	$(document).ready(function(){
+		$("#myTable").dataTable();
+	});		
+</script>	
+</body>	
+
+
+<style>
+
+.exception-message{
+	color:red;
+}
+
+th{ 
+	color:#fff;
+}
+</style>
+
+
+	
 </html>	  
+

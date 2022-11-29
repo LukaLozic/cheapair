@@ -22,7 +22,7 @@ import com.cheapair.dto.FlightResponseBody;
 import com.cheapair.dto.FlightSearchRequestBody;
 import com.cheapair.exceptions.FlightsServiceException;
 import com.cheapair.mappers.FlightAmadeusToFlightResponseAndDBMapper;
-import com.cheapair.mappers.FlightDBToFlightResponse;
+import com.cheapair.mappers.FlightDBToFlightResponseMapper;
 import com.cheapair.repositories.AirportRepository;
 import com.cheapair.repositories.FlightRepository;
 import com.cheapair.serviceclient.AmedeusClient;
@@ -41,9 +41,15 @@ public class FlightSearchProcessor {
 	
 	public static final String OBJECT_RESPONSE = "object_response";
 	
-	public static final String DATE_FORMAT = "yyyy-MMd";
+	public static final String DATE_FORMAT = "yyyy-MM-dd";
 	
 	public static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
+	
+	public static final String EUR = "EUR";
+	
+	public static final String USD = "USD";
+
+
 
 	@Autowired
 	private AmedeusClient amadeusClient;
@@ -52,7 +58,7 @@ public class FlightSearchProcessor {
 	private FlightAmadeusToFlightResponseAndDBMapper flightAmadeusToFlightResponseAndDBMapper;
 	
 	@Autowired
-	private FlightDBToFlightResponse flightDBToFlightResponse;
+	private FlightDBToFlightResponseMapper flightDBToFlightResponse;
 	
 	@Autowired
 	private  FlightRepository flightRepository;
@@ -143,11 +149,11 @@ public class FlightSearchProcessor {
 
 	private List<Flight> existingFlightsInDB(FlightSearchRequestBody requestBody, Airport departureAirport,
 			Airport arrivalAirport) throws Exception {
-
-		List<Flight> flightList = null;
+		
 		
 		String currency = requestBody.getCurrency();
 		Integer nubmerOfPassengers = requestBody.getNumberOfPassengers();
+		Integer flightsFetched = requestBody.getMax();
 		Date departureDate = null;
 		Date returnDate = null;
 		
@@ -166,14 +172,34 @@ public class FlightSearchProcessor {
 			throw new FlightsServiceException(errorMessage, e);
 		}
 		
-		flightList = flightRepository.findAirports(departureAirport, arrivalAirport, departureDate, returnDate, nubmerOfPassengers, currency);
+		List<Flight> flightList = null;
+		flightList = flightRepository.findFlightsByAllParametres(departureAirport, arrivalAirport, departureDate, returnDate, nubmerOfPassengers, currency, flightsFetched);
 	
-		if(flightList == null || flightList.size() == 0) {
+		List<Flight> flightListAllWithoutFlightsFetchedParam = null;
+		flightListAllWithoutFlightsFetchedParam = flightRepository.findFlightsBySixParametres(departureAirport, arrivalAirport, departureDate, returnDate, nubmerOfPassengers, currency);
+		
+		if(flightList != null && flightListAllWithoutFlightsFetchedParam != null) {
+			
+			if(flightList.size() != 0 &&flightList.size() == flightListAllWithoutFlightsFetchedParam.size()) {
+				return flightList;
+			}
+		}
+		else {
 			
 			return null;
-		}
+		}		
 		
-		return flightList;
+		try {
+			
+			flightRepository.deleteAll(flightListAllWithoutFlightsFetchedParam);
+			return null;
+		}
+		catch (Exception e) {
+			
+			String errorMessage = "Error deleting existing flights in DB: " + e.getMessage();
+			log.error(errorMessage);
+			throw new FlightsServiceException(errorMessage, e);
+		}
 	}
 
 	private Airport airportIATAcheck(String airportLocation) throws Exception {
@@ -242,19 +268,6 @@ public class FlightSearchProcessor {
 			throw new Exception(infoMessage);
 		}
 		
-		if(StringUtils.isEmpty(requestBody.getOriginLocationCode())) {
-			
-			infoMessage = "Origin location code is null or empty.";
-			throw new Exception(infoMessage);
-		}
-
-		
-		if(StringUtils.isEmpty(requestBody.getDestinationLocationCode())) {
-			
-			infoMessage = "Destination location code is null or empty.";
-			throw new Exception(infoMessage);
-		}
-		
 		if(StringUtils.isEmpty(requestBody.getDepartureDate())) {
 			
 			infoMessage = "Departure date is null or empty.";
@@ -267,9 +280,28 @@ public class FlightSearchProcessor {
 			throw new Exception(infoMessage);
 		}
 		
+		if(StringUtils.isEmpty(requestBody.getOriginLocationCode())) {
+			
+			infoMessage = "Origin location code is null or empty.";
+			throw new Exception(infoMessage);
+		}
+
+		
+		if(StringUtils.isEmpty(requestBody.getDestinationLocationCode())) {
+			
+			infoMessage = "Destination location code is null or empty.";
+			throw new Exception(infoMessage);
+		}		
+		
 		if(requestBody.getNumberOfPassengers() == null) {
 			
 			infoMessage = "Number of passenger is null or empty.";
+			throw new Exception(infoMessage);
+		}
+		
+		if(requestBody.getNumberOfPassengers() > 10) {
+			
+			infoMessage = "Max Number of passenger is 10.";
 			throw new Exception(infoMessage);
 		}
 		
@@ -278,10 +310,29 @@ public class FlightSearchProcessor {
 			infoMessage = "Currency is null or empty.";
 			throw new Exception(infoMessage);
 		}
+		
+		if(!requestBody.getCurrency().equals(EUR)) {
+			
+			if(!requestBody.getCurrency().equals(USD)) {
+				
+				infoMessage = "Currency must be "
+						+ "" + EUR + " or " + USD;
+				throw new Exception(infoMessage);
+			}
+		}
+		
+		if(requestBody.getMax() == null || requestBody.getMax().equals(0)) {
+			
+			infoMessage = "Max flights number is set to null or 0.";
+			throw new Exception(infoMessage);
+		}
+		
+		if(requestBody.getMax() > 99) {
+			
+			infoMessage = "Max flights number is 99.";
+			throw new Exception(infoMessage);
+		}
 	}
-	
-	
-	
-	
+
 	
 }

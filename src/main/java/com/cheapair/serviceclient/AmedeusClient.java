@@ -57,7 +57,7 @@ public class AmedeusClient {
 			   
 		} catch (Exception e) {
 			
-			String errorMessage = "Error fetching flights from amadeus.";
+			String errorMessage = "Error fetching flights from amadeus, " + e.getMessage();
 			throw new FlightsServiceException(errorMessage, e);			
 		}
 	

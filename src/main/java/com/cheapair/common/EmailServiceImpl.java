@@ -25,9 +25,9 @@ public class EmailServiceImpl{
       String subject, String exceptionMessage) {
     	  
     	MimeMessage message = emailSender.createMimeMessage();
-	     
-	    MimeMessageHelper helper = null;
+	     	    
 		try {
+			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		    helper.setFrom(EMAIL_ENV_USER);
 		    helper.setTo(EMAIL_DEV_USER);
 		    helper.setSubject(subject);
@@ -36,7 +36,7 @@ public class EmailServiceImpl{
 		    FileSystemResource file 
 		      = new FileSystemResource(new File("./cheapair.log"));
 		    
-		    helper.addAttachment("CheapAir", file);
+		    helper.addAttachment("CheapAir.log", file);
 
 		    emailSender.send(message);
 		} catch (MessagingException e) {

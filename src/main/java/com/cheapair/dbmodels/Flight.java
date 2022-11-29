@@ -59,7 +59,10 @@ public class Flight {
 	@Column(name = "PRICE", columnDefinition = "decimal(15,2)")
 	private BigDecimal price;
 
+	@Column(name = "FLIGHTS_FETCHED", columnDefinition = "integer")
+	private Integer flightsFetched;
 
+	
 
 	
 	public Integer getIdFlight() {
@@ -133,6 +136,15 @@ public class Flight {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
+	public Integer getFlightsFetched() {
+		return flightsFetched;
+	}
+
+	public void setFlightsFetched(Integer flightsFetched) {
+		this.flightsFetched = flightsFetched;
+	}
+
 
 
 	
