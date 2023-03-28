@@ -1,2 +1,5 @@
-#CheapAir
-Suppose to show cheap flights by certain criteria via GUI 
+# CheapAir
+Application for managing flight costs
+
+Technologies:
+LDAP, Redis as session store, JPA, Hibernate, REST, Mapstruct, PostgreSQL, Liquibase..
