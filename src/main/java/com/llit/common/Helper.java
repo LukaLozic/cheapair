@@ -15,12 +15,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class Helper {
-			
-	public static final String DATE_FORMAT = "yyyy-MM-dd";
-	
-	public static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
 
-	
+	public static final String DATE_FORMAT = "yyyy-MM-dd";
+	public static final String DATE_FORMAT_CRO = "dd.MM.yyyy.";
     public static String formatCurrencyValueToCroatianStandard(String number) throws Exception{
 
         StringBuilder sb = new StringBuilder();

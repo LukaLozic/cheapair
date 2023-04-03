@@ -1,8 +1,9 @@
 package com.llit.serviceclient;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.amadeus.Amadeus;
@@ -16,16 +17,13 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class AmedeusClient {
 	
 	private static Logger log = LoggerFactory.getLogger(AmedeusClient.class);
-
 	public static final String AMADEUS_CLIENT_ID = System.getenv("AMADEUS_CLIENT_ID");
 	public static final String AMADEUS_CLIENT_SECRET = System.getenv("AMADEUS_CLIENT_SECRET");
-		
-	
+
 	public FlightOfferSearch[] getAmadeusFlights(String originLocationCode, String destinationLocationCode, 
 			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception, NoFlightsException {
 		
@@ -75,7 +73,5 @@ public class AmedeusClient {
 
 	   return amadeusFlights;		
 	}
-
-	
 
 }

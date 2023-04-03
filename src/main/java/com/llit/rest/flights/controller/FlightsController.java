@@ -2,6 +2,9 @@ package com.llit.rest.flights.controller;
 
 import java.util.List;
 
+import com.llit.rest.flights.dto.FlightAvailable;
+import com.llit.rest.flights.dto.FlightResponseBody;
+import com.llit.rest.flights.dto.FlightSearchRequestBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,27 +15,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.llit.common.EmailServiceImpl;
-import com.llit.dto.FlightAvailable;
-import com.llit.dto.FlightResponseBody;
-import com.llit.dto.FlightSearchRequestBody;
+
 import com.llit.common.exception.FlightsServiceException;
 import com.llit.rest.flights.service.implementation.FlightServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j
 public class FlightsController {
 	
 	@Autowired
 	private FlightServiceImpl processor;
-	
 	@Autowired
 	private  EmailServiceImpl emailServiceImpl;
 
-		
 	private static Logger log = LoggerFactory.getLogger(FlightsController.class);
-	
 
     @GetMapping("/main")
     public String showMainMenu(FlightSearchRequestBody requestBody) {

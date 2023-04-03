@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class FlightSearchRequestBody {
 
-
 	private String originLocationCode;
 	private String destinationLocationCode;
 	private String departureDate;	

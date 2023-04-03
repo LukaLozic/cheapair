@@ -25,19 +25,13 @@ public class Scheduler {
 		log.info("Started update of existing flights data in DB, {}", dateFormat.format(new Date()));
 		
 		try {
-			
 			flightsUpdateTask.updateDbFlights();
-			
 			log.info("Finished update of existing flights data in DB, {}", dateFormat.format(new Date()));			
 		} 
 		catch (Exception e) {
-			
 			String errorMessage = "Error updating DB flights: ";
 			log.error(errorMessage + e.getMessage());
 		}
-		
-		
-		
-		
+
 	}
 }

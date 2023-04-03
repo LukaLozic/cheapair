@@ -18,10 +18,8 @@ import com.llit.entity.repository.FlightRepository;
 import com.llit.serviceclient.AmedeusClient;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class FlightsUpdateTask {
 	
@@ -44,8 +42,7 @@ public class FlightsUpdateTask {
 	
 	/**
 	 * Updates db flights
-	 * @param requestBody 
-	 * @return 
+	 * @return
 	 * @throws Exception 
 	 */
 	public void updateDbFlights() throws Exception {		
@@ -99,7 +96,6 @@ public class FlightsUpdateTask {
 				 
 				 updatePriceForFlight(flight, flightsFromAmadeus[0]);
 			 }
-			 			
 		 }		 
 	}
 	
@@ -127,11 +123,9 @@ public class FlightsUpdateTask {
 				}			
 			}
 		} catch (Exception e) {
-			
 			String errorMessage = "Error updating flights into db, ";
 			log.error(errorMessage);
 			throw new Exception(errorMessage.concat(e.getMessage()));
 		}
-	
 	}
 }

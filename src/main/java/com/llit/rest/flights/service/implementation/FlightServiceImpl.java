@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import com.llit.rest.flights.dto.FlightAvailable;
+import com.llit.rest.flights.dto.FlightResponseBody;
+import com.llit.rest.flights.dto.FlightSearchRequestBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +20,8 @@ import org.springframework.util.StringUtils;
 import com.amadeus.resources.FlightOfferSearch;
 import com.llit.entity.dao.Airport;
 import com.llit.entity.dao.Flight;
-import com.llit.dto.FlightAvailable;
-import com.llit.dto.FlightResponseBody;
-import com.llit.dto.FlightSearchRequestBody;
+
 import com.llit.common.exception.FlightsServiceException;
-import com.llit.rest.mappers.FlightAmadeusToFlightResponseAndDBMapper;
-import com.llit.rest.mappers.FlightDBToFlightResponseMapper;
 import com.llit.entity.repository.AirportRepository;
 import com.llit.entity.repository.FlightRepository;
 import com.llit.serviceclient.AmedeusClient;
@@ -31,7 +30,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 @RequiredArgsConstructor
 public class FlightServiceImpl {
 	
@@ -54,11 +52,11 @@ public class FlightServiceImpl {
 	@Autowired
 	private AmedeusClient amadeusClient;
 	
-	@Autowired
+/*	@Autowired
 	private FlightAmadeusToFlightResponseAndDBMapper flightAmadeusToFlightResponseAndDBMapper;
 	
 	@Autowired
-	private FlightDBToFlightResponseMapper flightDBToFlightResponse;
+	private FlightDBToFlightResponseMapper flightDBToFlightResponse;*/
 	
 	@Autowired
 	private  FlightRepository flightRepository;
@@ -72,7 +70,7 @@ public class FlightServiceImpl {
 	 * @return 
 	 * @throws Exception 
 	 */
-	public FlightResponseBody retrieveAmadeusFlights(FlightSearchRequestBody requestBody) throws Exception {		
+	public FlightResponseBody retrieveAmadeusFlights(FlightSearchRequestBody requestBody) throws Exception {
 
 		FlightResponseBody flightResponseBody = new FlightResponseBody();
 						
@@ -102,8 +100,9 @@ public class FlightServiceImpl {
 			int idNum = 1;
 
 			for(FlightOfferSearch flightAmadeus : amadeusFlightsList) {					
-												
-				HashMap<String, Object> objectMap = flightAmadeusToFlightResponseAndDBMapper.process(flightAmadeus, requestBody, departureAirport, arrivalAirport);		
+
+				//TODO
+				HashMap<String, Object> objectMap = null; //flightAmadeusToFlightResponseAndDBMapper.process(flightAmadeus, requestBody, departureAirport, arrivalAirport);
 				
 				if(objectMap == null) {
 					continue;
@@ -134,8 +133,9 @@ public class FlightServiceImpl {
 			
 			int idNum = 1;
 			for(Flight flightDB : existingFlights) {
-				
-				FlightAvailable flightAvailableResponse = flightDBToFlightResponse.process(requestBody, flightDB);
+
+				//TODO
+				FlightAvailable flightAvailableResponse = null; //flightDBToFlightResponse.process(requestBody, flightDB);
 				flightAvailableResponse.setIdFlight(String.valueOf(idNum));
 				idNum++;
 				flightsResponse.add(flightAvailableResponse);
