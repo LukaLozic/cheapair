@@ -1,77 +1,36 @@
 package com.llit.serviceclient;
 
 
-
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import com.amadeus.Amadeus;
 import com.amadeus.Params;
 import com.amadeus.resources.FlightOfferSearch;
-import com.llit.common.exception.FlightsServiceException;
-import com.llit.common.exception.NoFlightsException;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 
 @Service
-@RequiredArgsConstructor
 public class AmedeusClient {
 	
-	private static Logger log = LoggerFactory.getLogger(AmedeusClient.class);
-	public static final String AMADEUS_CLIENT_ID = System.getenv("AMADEUS_CLIENT_ID");
-	public static final String AMADEUS_CLIENT_SECRET = System.getenv("AMADEUS_CLIENT_SECRET");
+	//private static final Logger log = LoggerFactory.getLogger(AmedeusClient.class);
+	@Value("${amadeus.clientId}")
+	private String clientId;
+	@Value("${amadeus.clientSecret}")
+	private String clientSecret;
 
 	public FlightOfferSearch[] getAmadeusFlights(String originLocationCode, String destinationLocationCode, 
-			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception, NoFlightsException {
-		
-		Amadeus amadeus = null;
-		
-		try {
-			
-		     amadeus = Amadeus
-		            .builder(AMADEUS_CLIENT_ID, AMADEUS_CLIENT_SECRET)
-		            .build();
+			String departureDate, String returnDate, Integer numberOfPassengers, Integer max) throws Exception {
 
-		} catch (Exception e) {
-			
-			String errorMessage = "Error building amadeus object using clientId and clientSecret.";
-			log.error(errorMessage);
-			throw new Exception(errorMessage, e);
-			
-		}
-	    
-		FlightOfferSearch[] amadeusFlights = null;
-		
-		try {
-			   amadeusFlights = amadeus.shopping.flightOffersSearch.get(Params.with("originLocationCode", originLocationCode)
-			    		.and("destinationLocationCode", destinationLocationCode)
-			    		.and("departureDate", departureDate)
-			    		.and("returnDate", returnDate)
-			    		.and("adults", numberOfPassengers)
-			    		.and("max", max));
-			   
-		} catch (Exception e) {
-			
-			String errorMessage = "Error fetching flights from amadeus, " + e.getMessage();
-			throw new FlightsServiceException(errorMessage, e);			
-		}
-	
-		if(amadeusFlights.length == 0) {
-			
-			String infoMessage = "There is no flights for given criteria.";
-			throw new NoFlightsException(infoMessage);
-		}
-		
-		if(amadeusFlights[0].getResponse() != null && amadeusFlights[0].getResponse().getStatusCode() != 200) {
-			
-			String errorMessage = "Response status code from Amadeus is " + amadeusFlights[0].getResponse().getStatusCode();
-			throw new FlightsServiceException(errorMessage, null);
-		}
-
-	   return amadeusFlights;		
+	   return createAmadeusClient(clientId, clientSecret).shopping.flightOffersSearch
+				.get(Params.with("originLocationCode", originLocationCode)
+				.and("destinationLocationCode", destinationLocationCode)
+				.and("departureDate", departureDate)
+				.and("returnDate", returnDate)
+				.and("adults", numberOfPassengers)
+				.and("max", max));
 	}
 
+	private Amadeus createAmadeusClient(String clientId, String clientSecret) throws Exception {
+		return Amadeus.builder(clientId, clientSecret).build();
+	}
 }

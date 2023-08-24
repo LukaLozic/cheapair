@@ -1,23 +1,22 @@
-package com.llit.common;
+package com.llit.service.implementation;
 
 import java.io.File;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import com.llit.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
-public class EmailServiceImpl{
-
+@Service
+public class EmailServiceImpl implements EmailService {
 	public static final String EMAIL_DEV_USER = System.getenv("EMAIL_USER_DEV");
-	
 	public static final String EMAIL_ENV_USER = System.getenv("EMAIL_USER");
-	
     @Autowired
     private JavaMailSender emailSender;
 
@@ -40,13 +39,7 @@ public class EmailServiceImpl{
 
 		    emailSender.send(message);
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    
-
-    	
-    	
-	        		
     }
 }

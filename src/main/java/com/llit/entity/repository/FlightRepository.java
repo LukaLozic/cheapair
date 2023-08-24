@@ -1,6 +1,6 @@
 package com.llit.entity.repository;
-import com.llit.entity.dao.Airport;
-import com.llit.entity.dao.Flight;
+import com.llit.entity.dao.AirportEntity;
+import com.llit.entity.dao.FlightEntity;
 
 import java.util.Date;
 import java.util.List;
@@ -10,9 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 
-public interface FlightRepository extends CrudRepository<Flight, Integer>{
-
-	
+public interface FlightRepository extends CrudRepository<FlightEntity, Integer>{
 	@Query(value = "SELECT * FROM Flights a WHERE "
 			+ "a.departure_airport_id = :departureAirport AND "
 			+ "a.arrival_airport_id = :arrivalAirport AND "
@@ -22,9 +20,9 @@ public interface FlightRepository extends CrudRepository<Flight, Integer>{
 			+ "a.currency = :currency AND "
 			+ "a.flights_fetched = :flightsFetched", 			
 			  nativeQuery = true)
-	List<Flight> findFlightsByAllParametres(
-			@Param("departureAirport") Airport departureAirport, 
-			@Param("arrivalAirport") Airport arrivalAirport,
+	List<FlightEntity> findFlightsByAllParametres(
+			@Param("departureAirport") AirportEntity departureAirport,
+			@Param("arrivalAirport") AirportEntity arrivalAirport,
 			@Param("departureDate") Date departureDate,
 			@Param("arrivalDate") Date arrivalDate,
 			@Param("passengerNumber") Integer passengerNumber,
@@ -40,13 +38,12 @@ public interface FlightRepository extends CrudRepository<Flight, Integer>{
 			+ "a.passenger_number = :passengerNumber AND "
 			+ "a.currency = :currency",
 			  nativeQuery = true)
-	List<Flight> findFlightsBySixParametres(
-			@Param("departureAirport") Airport departureAirport, 
-			@Param("arrivalAirport") Airport arrivalAirport,
+	List<FlightEntity> findFlightsBySixParametres(
+			@Param("departureAirport") AirportEntity departureAirport,
+			@Param("arrivalAirport") AirportEntity arrivalAirport,
 			@Param("departureDate") Date departureDate,
 			@Param("arrivalDate") Date arrivalDate,
 			@Param("passengerNumber") Integer passengerNumber,
 			@Param("currency") String currency
 			);
-	
 }
