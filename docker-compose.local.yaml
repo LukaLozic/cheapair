@@ -8,6 +8,18 @@ services:
       POSTGRES_PASSWORD: pass
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
+  openldap:
+    image: osixia/openldap:latest
+    environment:
+      LDAP_DOMAIN: llit.com
+      LDAP_ADMIN_PASSWORD: password
+    ports:
+      - "389:389"
+    volumes:
+      - ldap-data:/var/lib/ldap
+      - ldap-config:/etc/ldap/slapd.d
+
   cheapair:
     image: cheapair:latest
     ports:
@@ -16,6 +28,33 @@ services:
       - SPRING_PROFILES_ACTIVE=local
     depends_on:
       - postgres
+      - openldap
+
+  keycloak:
+    image: jboss/keycloak:latest
+    ports:
+      - "8081:8080"
+    environment:
+      KEYCLOAK_OPTS: "-Xms2g -Xmx4g"
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      PROXY_ADDRESS_FORWARDING: "true"  # Set this if Keycloak is behind a reverse proxy
+      DB_VENDOR: h2  # Use H2 for Keycloak's internal database
+      LDAP_URL: ldap://openldap:389  # URL of the LDAP server
+      LDAP_BIND_DN: cn=admin,dc=llit,dc=com  # The LDAP admin user DN
+      LDAP_BIND_CREDENTIAL: password  # The LDAP admin user password
+      LDAP_USER_DN_SUFFIX: ou=users,dc=llit,dc=com  # The base DN for Keycloak users
+      LDAP_USER_OBJECT_CLASSES: inetOrgPerson  # Object classes for Keycloak users
+      LDAP_USER_ATTRIBUTE: uid  # Attribute used as the username for Keycloak users
+      LDAP_TLS_REQUIRED: "false"  # Set to "true" if LDAP requires TLS
+      LDAP_USE_START_TLS: "false"  # Set to "true" if you want to use StartTLS
+    depends_on:
+      - openldap
+
 volumes:
   postgres-data:
+    driver: local
+  ldap-data:
+    driver: local
+  ldap-config:
     driver: local
